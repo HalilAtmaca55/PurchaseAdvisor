@@ -1,9 +1,9 @@
 package com.example.demo.data;
 
-import com.example.demo.models.entity.User;
+import com.example.demo.models.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    User findByUserName(String username);
+    UserEntity findByUserName(String username);
 }
