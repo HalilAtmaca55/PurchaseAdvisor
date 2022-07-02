@@ -1,8 +1,8 @@
 package com.example.demo.controller.contract;
 
 import com.example.demo.models.entity.User;
+import com.example.demo.models.request.AddRoleToUserRequest;
 import com.example.demo.services.contract.UserService;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,12 +21,6 @@ public class UserController {
     @PutMapping
     public void addRoles(@RequestBody AddRoleToUserRequest request) {
         userService.addRoleTo(request.getUsername(), request.getRole());
-    }
-
-    @Data
-     class AddRoleToUserRequest {
-        private String username;
-        private String role;
     }
 
 }

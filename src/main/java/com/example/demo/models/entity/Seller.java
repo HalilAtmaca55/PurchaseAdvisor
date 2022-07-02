@@ -7,8 +7,13 @@ import java.util.Set;
 
 @Entity
 @Data
-public class Seller extends User{
+public class Seller {
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @OneToOne
+    private User user;
+    @OneToMany
     private Set<Product> products;
 }

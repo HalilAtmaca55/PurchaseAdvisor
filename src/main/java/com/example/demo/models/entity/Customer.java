@@ -7,7 +7,14 @@ import java.math.BigDecimal;
 
 @Entity
 @Data
-public class Customer extends User{
+public class Customer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+
+    @OneToOne
+    private User user;
     private BigDecimal money;
 }
